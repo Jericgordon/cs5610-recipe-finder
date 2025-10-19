@@ -54,7 +54,6 @@ function MyMongoDB({
       await client.close();
     }
   };
-
   me.createRecipe = async ({
     name,
     ingredients,
@@ -65,7 +64,7 @@ function MyMongoDB({
     source,
   }) => {
     const { client, recipes } = connect();
-
+    //consider error checking here
     try {
       const createdAt = new Date();
       const doc = {
@@ -95,7 +94,7 @@ function MyMongoDB({
 
     try {
       const update = {
-        ...updateData,
+        ...updateData, //this is really neat syntax
         updatedAt: new Date(),
       };
 
@@ -133,6 +132,7 @@ function MyMongoDB({
     }
   };
 
+  //consider splitting out username and recipie functions.
   me.getUserByUsername = async (username) => {
     const { client, users } = connect();
     try {

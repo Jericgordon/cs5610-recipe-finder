@@ -17,11 +17,11 @@ app.use((req, res, next) => {
 
 app.use(express.static("frontend"));
 
-app.use("/assets", express.static("assets"));
+app.use("/assets", express.static("assets")); //by convention this folder is called 'public'
 
 app.use("/api/", recipesRouter);
 
-app.use("/api/auth", authRoutes);
+app.use("/api/auth", authRoutes); //it's really helpful to name your route files after the route. If you're going to have an "api/" route in HTML, it's probably best to name that route file api.js for ease of finding
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

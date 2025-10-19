@@ -97,3 +97,6 @@ function init() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
+
+//consider not loading all the recepies at once; This would look like only loading recipies when you get the the end of the page,
+//and putting a listener on that event
